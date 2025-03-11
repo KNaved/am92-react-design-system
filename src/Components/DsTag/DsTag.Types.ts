@@ -1,12 +1,13 @@
-import { ChipProps } from '@mui/material'
+import { DsChipProps } from '../DsChip'
 
 export interface DsTagProps
-  extends Omit<ChipProps, 'skipFocusWhenDisabled' | 'clickable' | 'color'> {
+  extends Omit<DsChipProps, 'skipFocusWhenDisabled' | 'clickable' | 'color'> {
   value: any
   selected: boolean
 }
 
 export const DsTagDefaultProps: DsTagProps = {
   value: undefined,
-  selected: false
+  selected: false,
+  'ds-variant': ''
 }
