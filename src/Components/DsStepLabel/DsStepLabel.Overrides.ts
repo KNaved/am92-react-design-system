@@ -4,10 +4,12 @@ export const DsStepLabelOverrides = {
   MuiStepLabel: {
     styleOverrides: {
       root: {
-        paddingLeft: 'var(--ds-spacing-bitterCold)',
         paddingRight: 'var(--ds-spacing-bitterCold)',
         paddingTop: 'var(--ds-spacing-zero)',
         paddingBottom: 'var(--ds-spacing-zero)'
+      } as CSSInterpolation,
+      horizontal: {
+        paddingLeft: 'var(--ds-spacing-bitterCold)',
       } as CSSInterpolation,
       label: {
         fontWeight: 'var(--ds-typo-bodyRegularSmall-fontWeight)',
