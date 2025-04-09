@@ -71,7 +71,7 @@ const [open, setOpen] = useState<DsProgressTrackerState['open']>(props['ds-varia
           p: 'var(--ds-spacing-bitterCold)',
           alignItems: 'center',
           borderBottom: '1px solid var(--ds-colour-strokeDefault)',
-          backgroundColor: 'var(--ds-colour-surfaceBackground)',
+          backgroundColor: 'var(--ds-colour-surfacePrimary)',
           cursor: mergedProps['ds-variant'] === 'default' ? 'pointer' : 'unset'
         }}
         spacing="var(--ds-spacing-bitterCold)"
