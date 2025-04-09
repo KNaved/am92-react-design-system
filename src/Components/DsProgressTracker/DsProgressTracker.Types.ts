@@ -13,7 +13,7 @@ export interface DsProgressTrackerProps {
 
   StepperProps?: Omit<DsProgressStepperProps, 'activeStep' | 'steps' | 'ref'>
   sx?: DsBoxProps
-  nextStepLabelPrefix: React.ReactNode
+  nextStepLabelPrefix?: React.ReactNode
 }
 
 export const DsProgressTrackerDefaultProps: DsProgressTrackerProps = {
