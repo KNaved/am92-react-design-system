@@ -166,7 +166,7 @@ export const DsCarousel = (props: DsCarouselProps) => {
         direction='horizontal'
       >
         {React.Children.map(children, (child, index) => (
-          <SwiperSlide key={`${name}-${index}`}>{child}</SwiperSlide>
+          <SwiperSlide key={`key-${index}`}>{child}</SwiperSlide>
         ))}
         <DsCarouselNavigation
           isEnabled={_isNavigationEnabled()}
