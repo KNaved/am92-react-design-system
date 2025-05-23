@@ -1,10 +1,11 @@
 import React, { useState, useRef } from 'react'
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV2';
 import {
   DatePicker,
   DateValidationError,
   DateView,
-  LocalizationProvider
+  LocalizationProvider,
+  PickersTextFieldProps,
 } from '@mui/x-date-pickers'
 import { DefaultActionBar } from './DefaultActionBar'
 import { DefaultToolbar } from './DefaultToolbar'
@@ -131,6 +132,7 @@ export const DsDatePicker: React.FC<DsDatePickerProps> = inProps => {
         {...restProps}
         slots={{
           actionBar: DefaultActionBar,
+
           toolbar: DefaultToolbar,
           textField: DatePickerTextField,
           calendarHeader: DateCalenderHeader,
@@ -168,11 +170,7 @@ export const DsDatePicker: React.FC<DsDatePickerProps> = inProps => {
                 </DsIconButton>
               </DsInputAdornment>
             )
-          } as IDatePickerTextFieldProps,
-          actionBar: {
-            actions: props.view === 'day' ? ['clear', 'accept'] : [],
-            ...props.slotProps?.actionBar
-          },
+          } as IDatePickerTextFieldProps & PickersTextFieldProps,
           popper: {
             anchorEl: ref.current,
             // style to unset fixed width
@@ -198,6 +196,7 @@ export const DsDatePicker: React.FC<DsDatePickerProps> = inProps => {
         value={getDateFromValue(value, valueType, format)}
         defaultValue={getDateFromValue(defaultValue, valueType, format)}
         inputRef={ref}
+        enableAccessibleFieldDOMStructure={false}
       />
     </LocalizationProvider>
   )

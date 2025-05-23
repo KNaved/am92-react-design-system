@@ -1,6 +1,6 @@
 import { useThemeProps } from '@mui/system'
 import { DateFieldProps } from '@mui/x-date-pickers'
-import React, { FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 import { DsTextField, DsTextFieldProps } from '../../../Components'
 
 export interface IDatePickerTextFieldProps
@@ -12,7 +12,6 @@ export interface IDatePickerTextFieldProps
   InputProps?: DateFieldProps['InputProps']
   ref?: DateFieldProps['ref']
   focused?: boolean
-  ownerState?: any
 }
 
 const DatePickerTextField: FunctionComponent<IDatePickerTextFieldProps> = (
@@ -23,7 +22,7 @@ const DatePickerTextField: FunctionComponent<IDatePickerTextFieldProps> = (
     name: 'MuiPickersInput'
   })
 
-  const { setOpen, ref, InputProps, focused, ownerState, ...other } =
+  const { setOpen, ref, InputProps, focused, ...other } =
     mergedProps
   const { readOnly } = InputProps || {}
   return <DsTextField readOnly={readOnly} {...other} />

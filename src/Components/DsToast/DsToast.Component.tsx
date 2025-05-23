@@ -1,13 +1,12 @@
-import React, { FC, PureComponent } from 'react'
+import { FC } from 'react'
 import Alert from '@mui/material/Alert'
 import { DsToastProps } from './DsToast.Types'
 import { DsRemixIcon } from '../DsRemixIcon'
 import { useThemeProps } from '@mui/system'
 
 const CloseIcon = (props: any) => {
-  const { ownerState, ...restProps } = props
   return (
-    <DsRemixIcon fontSize="mild" className="ri-close-line" {...restProps} />
+    <DsRemixIcon fontSize="mild" className="ri-close-line" {...props} />
   )
 }
 
