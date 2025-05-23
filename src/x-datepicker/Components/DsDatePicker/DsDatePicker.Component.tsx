@@ -132,7 +132,6 @@ export const DsDatePicker: React.FC<DsDatePickerProps> = inProps => {
         {...restProps}
         slots={{
           actionBar: DefaultActionBar,
-
           toolbar: DefaultToolbar,
           textField: DatePickerTextField,
           calendarHeader: DateCalenderHeader,
