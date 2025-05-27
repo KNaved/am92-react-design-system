@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV2';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import {
   DatePicker,
   DateValidationError,
