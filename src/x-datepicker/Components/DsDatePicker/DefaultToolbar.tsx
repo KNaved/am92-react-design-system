@@ -10,7 +10,8 @@ import {
 } from '../../../Components'
 
 export const DefaultToolbar = React.forwardRef(function DatePickerToolbar(
-  inProps: DatePickerToolbarProps
+  inProps: DatePickerToolbarProps,
+  ref: React.Ref<HTMLDivElement>
 ) {
   const { value, cancelValueChanges } = usePickerContext()
 
