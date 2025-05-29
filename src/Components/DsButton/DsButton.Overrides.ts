@@ -38,7 +38,7 @@ export const DsButtonOverrides = {
         }
       } as CSSInterpolation,
       contained: {
-        '&.MuiButton-containedPrimary': {
+        "&.MuiButton-contained.MuiButton-colorPrimary": {
           color: 'var(--ds-colour-typoOnSurface)',
           backgroundColor: 'var(--ds-colour-actionPrimary)',
           '&:disabled': {
@@ -47,7 +47,7 @@ export const DsButtonOverrides = {
           },
           ...STATE_STYLES.ACTION_PRIMARY_STATE_PRIMARY
         } as CSSInterpolation,
-        '&.MuiButton-containedSecondary': {
+        "&.MuiButton-contained.MuiButton-colorSecondary": {
           backgroundColor: 'var(--ds-colour-surfaceSecondary)',
           borderWidth: '1px',
           borderStyle: 'solid',
