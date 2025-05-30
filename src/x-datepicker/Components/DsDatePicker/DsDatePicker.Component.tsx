@@ -32,7 +32,7 @@ import DatePickerTextField, {
 
 export const DsDatePicker: React.FC<DsDatePickerProps> = inProps => {
   const props = useThemeProps({
-    props: { ...DsDatePickerDefaultProps, ...inProps },
+    props: inProps,
     name: 'MuiDatePicker'
   })
 
