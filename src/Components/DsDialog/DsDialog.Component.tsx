@@ -45,7 +45,7 @@ export const DsDialog: React.FC<DsDialogProps> = (props) => {
       children,
       ...DialogProps
     } = props
-console.log('props', props)
+
     const actionsAvailable = !!(primaryButtonText || secondaryButtonText)
     const accessibilityProps: Partial<DsDialogProps> = {}
     const isFlushed =
