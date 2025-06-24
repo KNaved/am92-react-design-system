@@ -36,7 +36,6 @@ export const DsDialog: React.FC<DsDialogProps> = (props) => {
       primaryButtonProps,
       secondaryButtonText,
       secondaryButtonProps,
-      PaperProps,
       TitleProps,
       DescriptionProps,
       CloseIconButtonProps,
@@ -68,20 +67,22 @@ console.log('props', props)
         keepMounted
         {...accessibilityProps}
         {...DialogProps}
-        PaperProps={{
-          ...PaperProps,
-          sx: {
-            pb: isFlushed
-              ? undefined
-              : {
+        slotProps={{
+          ...DialogProps.slotProps,
+          paper: {
+            sx: {
+              pb: isFlushed
+                ? undefined
+                : {
                   xs: 'var(--ds-spacing-bitterCold)',
                   md: 'var(--ds-spacing-warm)'
                 },
-            pt: {
-              xs: 'var(--ds-spacing-mild)',
-              md: 'var(--ds-spacing-warm)'
+              pt: {
+                xs: 'var(--ds-spacing-mild)',
+                md: 'var(--ds-spacing-warm)'
+              },
             },
-            ...PaperProps?.sx
+            ...DialogProps.slotProps?.paper,
           }
         }}
       >

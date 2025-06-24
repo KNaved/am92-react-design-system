@@ -63,7 +63,10 @@ export const DsProgressStepper: FC<DsProgressStepperProps> = (inProps) => {
       <DsStep key={index} {...stepProps}>
         <DsStepLabel
           {...stepLabelProps}
-          StepIconComponent={renderStepIcon}
+          slots={{
+            stepIcon: renderStepIcon,
+            ...stepLabelProps.slots
+          }}
         >
           {stepName}
         </DsStepLabel>

@@ -42,7 +42,6 @@ export const DsBottomSheet: FC<DsBottomSheetProps> = (inProps) => {
       primaryButtonProps,
       secondaryButtonText,
       secondaryButtonProps,
-      PaperProps,
       ContainerProps,
       KickerProps,
       TitleProps,
@@ -51,7 +50,6 @@ export const DsBottomSheet: FC<DsBottomSheetProps> = (inProps) => {
       ContentProps,
       ActionsProps,
       children,
-
       onClose,
       ...DrawerProps
     } = props
@@ -77,15 +75,17 @@ export const DsBottomSheet: FC<DsBottomSheetProps> = (inProps) => {
         {...accessibilityProps}
         {...DrawerProps}
         anchor="bottom"
-        PaperProps={{
-          ...PaperProps,
-          sx: {
-            background: 'transparent',
-            maxHeight: 'var(--ds-rules-bottomSheetWorkingAreaHeight)',
-            ...PaperProps?.sx
+        onClose={handleDrawerClose}
+        slotProps={{
+          ...DrawerProps.slotProps,
+          paper: {
+            sx: {
+              background: 'transparent',
+              maxHeight: 'var(--ds-rules-bottomSheetWorkingAreaHeight)',
+            },
+            ...DrawerProps.slotProps?.paper
           }
         }}
-        onClose={handleDrawerClose}
       >
         {showClose && (
           <DsIconButton
