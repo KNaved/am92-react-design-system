@@ -13,6 +13,7 @@ import { DsDialogContent } from '../DsDialogContent'
 import { DsButton } from '../DsButton'
 import { DsDialogActions } from '../DsDialogActions'
 import { DsPaper } from '../DsPaper'
+import { mergeSlotProps } from '../../utils'
 
 export const DsBottomSheet: FC<DsBottomSheetProps> = (inProps) => {
   const props = { ...DsBottomSheetDefaultProps, ...inProps }
@@ -51,6 +52,8 @@ export const DsBottomSheet: FC<DsBottomSheetProps> = (inProps) => {
       ActionsProps,
       children,
       onClose,
+      PaperProps,
+      slotProps,
       ...DrawerProps
     } = props
 
@@ -70,6 +73,11 @@ export const DsBottomSheet: FC<DsBottomSheetProps> = (inProps) => {
       accessibilityProps['aria-describedby'] = kicker
     }
 
+    const paperProps = {
+      ...PaperProps,
+      ...slotProps?.paper
+    };
+
     return (
       <DsDrawer
         {...accessibilityProps}
@@ -77,14 +85,13 @@ export const DsBottomSheet: FC<DsBottomSheetProps> = (inProps) => {
         anchor="bottom"
         onClose={handleDrawerClose}
         slotProps={{
-          ...DrawerProps.slotProps,
-          paper: {
+          ...paperProps,
+          paper: mergeSlotProps(paperProps, {
             sx: {
               background: 'transparent',
               maxHeight: 'var(--ds-rules-bottomSheetWorkingAreaHeight)',
             },
-            ...DrawerProps.slotProps?.paper
-          }
+          }),
         }}
       >
         {showClose && (

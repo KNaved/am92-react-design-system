@@ -8,6 +8,7 @@ import { DsTypography } from '../DsTypography'
 import { DsDialogContent } from '../DsDialogContent'
 import { DsDialogActions } from '../DsDialogActions'
 import { DsButton } from '../DsButton'
+import { mergeSlotProps } from '../../utils'
 
 export const DsDialog: React.FC<DsDialogProps> = (props) => {
 
@@ -43,6 +44,8 @@ export const DsDialog: React.FC<DsDialogProps> = (props) => {
       ContentProps,
       ActionsProps,
       children,
+      slotProps,
+      PaperProps,
       ...DialogProps
     } = props
 
@@ -62,14 +65,19 @@ export const DsDialog: React.FC<DsDialogProps> = (props) => {
       accessibilityProps['aria-describedby'] = description
     }
 
+    const paperProps = {
+      ...PaperProps,
+      ...slotProps?.paper
+    }
+
     return (
       <Dialog
         keepMounted
         {...accessibilityProps}
         {...DialogProps}
         slotProps={{
-          ...DialogProps.slotProps,
-          paper: {
+          ...paperProps,
+          paper: mergeSlotProps(paperProps, {
             sx: {
               pb: isFlushed
                 ? undefined
@@ -82,8 +90,7 @@ export const DsDialog: React.FC<DsDialogProps> = (props) => {
                 md: 'var(--ds-spacing-warm)'
               },
             },
-            ...DialogProps.slotProps?.paper,
-          }
+          }),
         }}
       >
         {title && (
