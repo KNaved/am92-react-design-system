@@ -29,6 +29,7 @@ import { useThemeProps } from '@mui/system'
 import DatePickerTextField, {
   IDatePickerTextFieldProps
 } from './DatePickerTextField'
+import { mergeSlotProps } from '../../../utils'
 
 export const DsDatePicker: React.FC<DsDatePickerProps> = inProps => {
   const props = useThemeProps({
@@ -170,16 +171,15 @@ export const DsDatePicker: React.FC<DsDatePickerProps> = inProps => {
               </DsInputAdornment>
             )
           } as IDatePickerTextFieldProps & PickersTextFieldProps,
-          popper: {
+          popper: mergeSlotProps(props.slotProps?.popper, {
             anchorEl: ref.current,
             // style to unset fixed width
             sx: {
               '.MuiMonthCalendar-root': {
                 width: '100%'
               }
-            },
-            ...props.slotProps?.popper
-          }
+            }
+          })
         }}
         readOnly={readOnly}
         disabled={disabled}
