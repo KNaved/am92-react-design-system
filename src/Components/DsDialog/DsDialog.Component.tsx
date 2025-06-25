@@ -76,7 +76,7 @@ export const DsDialog: React.FC<DsDialogProps> = (props) => {
         {...accessibilityProps}
         {...DialogProps}
         slotProps={{
-          ...paperProps,
+          ...slotProps,
           paper: mergeSlotProps(paperProps, {
             sx: {
               pb: isFlushed

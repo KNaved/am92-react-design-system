@@ -85,7 +85,7 @@ export const DsBottomSheet: FC<DsBottomSheetProps> = (inProps) => {
         anchor="bottom"
         onClose={handleDrawerClose}
         slotProps={{
-          ...paperProps,
+          ...slotProps,
           paper: mergeSlotProps(paperProps, {
             sx: {
               background: 'transparent',
