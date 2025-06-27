@@ -65,9 +65,9 @@ export const DateCalenderHeader = React.forwardRef(
           >
             <DsTypography
               variant="bodyBoldSmall"
-              color={
-                isMonthNavigationDisabled ? 'text.disabled' : 'text.primary'
-              }
+              sx={{
+                color: isMonthNavigationDisabled ? 'text.disabled' : 'text.primary'
+              }}
             >
               {utils.formatByString(currentMonth, utils.formats.monthShort)}
             </DsTypography>
@@ -102,9 +102,9 @@ export const DateCalenderHeader = React.forwardRef(
           >
             <DsTypography
               variant="bodyBoldSmall"
-              color={
-                isYearNavigationDisabled ? 'text.disabled' : 'text.primary'
-              }
+              sx={{
+                color: isYearNavigationDisabled ? 'text.disabled' : 'text.primary'
+              }}
             >
               {utils.formatByString(currentMonth, utils.formats.year)}
             </DsTypography>

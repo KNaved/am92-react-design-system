@@ -28,9 +28,11 @@ export const DsProgressTrackerHeader = (props: DsProgressTrackerProps) => {
     return (
       <DsTypography
         component='div'
-        textAlign='right'
-        color='var(--ds-colour-typoTertiary)'
         variant='subheadingSemiboldDefault'
+        sx={{
+          textAlign: 'right',
+          color: 'var(--ds-colour-typoTertiary)'
+        }}
       >
         {isNextStepLastStep
           ? 'Yay! you are almost done'
@@ -105,9 +107,11 @@ export const DsProgressTrackerHeader = (props: DsProgressTrackerProps) => {
           <DsStack flexGrow={1} spacing='var(--ds-spacing-quickFreeze)'>
             <DsTypography
               component='div'
-              textAlign='right'
-              color='var(--ds-colour-actionSecondary)'
               variant='headingBoldExtraSmall'
+              sx={{
+                textAlign: 'right',
+                color: 'var(--ds-colour-actionSecondary)'
+              }}
             >
               {currentStep.stepName}
             </DsTypography>

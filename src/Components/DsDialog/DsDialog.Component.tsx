@@ -111,9 +111,9 @@ export const DsDialog: React.FC<DsDialogProps> = (props) => {
         {description && (
           <DsTypography
             variant="subheadingSemiboldDefault"
-            color="text.secondary"
             {...DescriptionProps}
             sx={{
+              color: 'text.secondary',
               px: {
                 xs: 'var(--ds-spacing-bitterCold)',
                 md: 'var(--ds-spacing-warm)'

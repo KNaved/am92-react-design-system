@@ -130,9 +130,9 @@ export const DsBottomSheet: FC<DsBottomSheetProps> = (inProps) => {
           {kicker && (
             <DsTypography
               variant="subheadingSemiboldDefault"
-              color="text.tertiary"
               {...KickerProps}
               sx={{
+                color: 'text.tertiary',
                 px: 'var(--ds-spacing-bitterCold)',
                 mb: 'var(--ds-spacing-quickFreeze)',
                 textTransform: 'uppercase',
