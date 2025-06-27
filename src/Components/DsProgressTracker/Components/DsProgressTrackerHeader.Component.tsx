@@ -53,11 +53,13 @@ export const DsProgressTrackerHeader = (props: DsProgressTrackerProps) => {
         >
           <DsStack
             direction='row'
-            justifyContent='space-between'
-            px='var(--ds-spacing-bitterCold)'
-            pt='var(--ds-spacing-frostbite)'
-            pb='calc(var(--ds-spacing-frostbite) - var(--ds-spacing-deepFreeze))'
             onClick={onClick}
+            sx={{
+              justifyContent: 'space-between',
+              px: 'var(--ds-spacing-bitterCold)',
+              pt: 'var(--ds-spacing-frostbite)',
+              pb: 'calc(var(--ds-spacing-frostbite) - var(--ds-spacing-deepFreeze))'
+            }}
           >
             <DsTypography variant='subheadingSemiboldDefault'>
               {`STEP ${activeStep + 1} OF ${steps.length}`}
@@ -104,7 +106,12 @@ export const DsProgressTrackerHeader = (props: DsProgressTrackerProps) => {
             activeStep={activeStep + 1}
             steps={steps.length}
           />
-          <DsStack flexGrow={1} spacing='var(--ds-spacing-quickFreeze)'>
+            <DsStack
+              spacing='var(--ds-spacing-quickFreeze)'
+              sx={{
+                flexGrow: 1
+              }}
+            >
             <DsTypography
               component='div'
               variant='headingBoldExtraSmall'

@@ -43,15 +43,19 @@ export const DateCalenderHeader = React.forwardRef(
     return (
       <DsStack
         direction="row"
-        justifyContent="space-between"
         // spacing='var(--ds-spacing-frostbite)'
-        sx={{ p: 'var(--ds-spacing-frostbite)' }}
+        sx={{
+          justifyContent: 'space-between',
+          p: 'var(--ds-spacing-frostbite)'
+        }}
       >
         <DsStack
           direction="row"
-          justifyContent="space-between"
-          alignItems="center"
           spacing="var(--ds-spacing-frostbite)"
+          sx={{
+            justifyContent: "space-between",
+            alignItems: "center"
+          }}
         >
           <DsIconButton
             disabled={isYearNavigationDisabled || isMonthNavigationDisabled}
@@ -86,9 +90,11 @@ export const DateCalenderHeader = React.forwardRef(
         </DsStack>
         <DsStack
           direction="row"
-          justifyContent="space-between"
-          alignItems="center"
           spacing="var(--ds-spacing-frostbite)"
+          sx={{
+            justifyContent: "space-between",
+            alignItems: "center"
+          }}
         >
           <DsIconButton
             disabled={isYearNavigationDisabled || isMonthNavigationDisabled}
